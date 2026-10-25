@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How long since Nick didn't cover Beans?</title>
+</head>
+<body>
+    <header><h1> How long are we waiting for nick to cover <b><a href=https://www.youtube.com/watch?v=ElYUWnvKFfA>B E A N S</a></b>?</header>
+    <main>
+        <h1 id="months"></h1>
+        <h2 id="weeks"></h2>
+        <h3 id="days"></h3>
+        <h4 id="hours"></h4>
+        <h5 id="minutes"></h5>
+        <h6 id="seconds"></h6>
+    </main>
+    <footer>made by <a href="https://miyoro-desu.github.io/miyo-site/">m i y o r o</a></footer>
+
+    <script>
+        const startDate = new Date("2026-09-07T00:00:00");
+
+        function updateTime() {
+            const now = new Date();
+            let elapsed = Math.floor((now - startDate) / 1000);
+
+            const months = Math.floor(elapsed / (30 * 86400));
+            const weeks = Math.floor(elapsed / (7 * 86400));
+            const days = Math.floor(elapsed / 86400);
+            const hours = Math.floor(elapsed / 3600);
+            const minutes = Math.floor(elapsed / 60);
+            const seconds = elapsed;
+
+            document.getElementById("months").textContent =
+                `Months: ${months}`;
+
+            document.getElementById("weeks").textContent =
+                `Weeks: ${weeks}`;
+
+            document.getElementById("days").textContent =
+                `Days: ${days}`;
+
+            document.getElementById("hours").textContent =
+                `Hours: ${hours}`;
+
+            document.getElementById("minutes").textContent =
+                `Minutes: ${minutes}`;
+
+            document.getElementById("seconds").textContent =
+                `Seconds: ${seconds}`;
+        }
+
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+    <style> 
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        header {
+            width: 100%;
+            background-color: black;
+            color: white;
+            padding: 2.5vh 0;
+            border: 1px solid white;
+        }
+
+        main {
+            width: 100%;
+            flex: 1;
+        }
+
+        footer {
+            width: 100%;
+            padding: 1rem;
+        }
+        h1,h2,h3,h4,h5,h6{
+            width: 100%;
+            flex: 1;
+            padding: 1%;
+        }
+    </style>
+</body>
+</html>
